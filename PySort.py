@@ -11,9 +11,9 @@ class insertSort():
     def returnSorted(self, printSorted = False, snapshots = False):
         arr = self.unsorted
         for i in range(1, len(arr)):
+            j = i
             if snapshots:
                     self.snapshots[f"Step {j}"] = arr  
-            j = i
             while arr[j-1] > arr[j] and j > 0:
                 arr[j-1], arr[j] = arr[j], arr[j-1]
                 j -= 1
@@ -25,9 +25,9 @@ class insertSort():
     def returnReverseSorted(self, printSorted = False, snapshots = False):
         arr = self.unsorted
         for i in range(1, len(arr)):
+            j = i
             if snapshots:
                 self.snapshots[f"Reverse Step {i}"] = arr
-            j = i
             while arr[j-1] < arr[j] and j > 0:
                 arr[j-1], arr[j] = arr[j], arr[j-1] 
                 j -= 1  
