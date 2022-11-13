@@ -18,3 +18,5 @@ Insertion
 
 Selection
 
+QuickSort
+
