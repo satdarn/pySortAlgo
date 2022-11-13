@@ -1,16 +1,11 @@
-#Joseph Bronsten Nov 13 2022
-#PySort is an Expanding Libary of Python Sorting Algos 
-#
-#Each Algo accepts a list of Ints and will return
-#
-#
-#
-#
+
+
 
 class insertSort():
     def __init__(self, sortList = []):
         self.unsorted = sortList
         self.sorted = []
+        self.reverseSorted = []
     def returnUnsorted(self, printUnsorted = False):
         if printUnsorted:
             print(self.unsorted)
@@ -26,6 +21,70 @@ class insertSort():
         if printSorted:
             print(self.sorted)
         return self.sorted
-        
-print(insertSort([2,6,5,1,3,4]).returnSorted())
+    def returnReverseSorted(self, printSorted = False):
+        arr = self.unsorted
+        for i in range(1, len(arr)):
+            j = i
+            while arr[j-1] < arr[j] and j > 0:
+                arr[j-1], arr[j] = arr[j], arr[j-1] 
+                j -= 1  
+        self.reverseSorted = arr
+        if printSorted:
+            print(self.reverseSorted)
+        return self.reverseSorted
 
+class selectionSort():
+    def __init__(self, sortList = []):
+        self.unsorted = sortList
+        self.sorted = []
+        self.reverseSorted = []
+    def returnUnsorted(self, printUnsorted = False):
+        if printUnsorted:
+            print(self.unsorted)
+        return self.unsorted
+    def returnSorted(self, printSorted = False):
+        arr = self.unsorted
+        for i in range(0, len(arr)-1):
+            curMinIndex = i
+            for j in range(i+1, len(arr)):
+                if arr[j] < arr[curMinIndex]:
+                    curMinIndex = j
+            arr[i], arr[curMinIndex] = arr[curMinIndex], arr[i]
+        self.sorted = arr
+        if printSorted:
+            print(self.sorted)
+        return self.sorted
+    def returnReverseSorted(self, printSorted = False):
+        if printSorted:
+            print(self.reverseSorted)
+        return self.reverseSorted
+
+
+
+
+
+
+#DONT USE IN IMPLEMENTION THIS IS A DEV TEMPLATE
+class templateAlgo():
+    def __init__(self, sortList = []):
+        self.unsorted = sortList
+        self.sorted = []
+        self.reverseSorted = []
+    def returnUnsorted(self, printUnsorted = False):
+        if printUnsorted:
+            print(self.unsorted)
+        return self.unsorted
+    def returnSorted(self, printSorted = False):
+        if printSorted:
+            print(self.sorted)
+        return self.sorted
+    def returnReverseSorted(self, printSorted = False):
+        if printSorted:
+            print(self.reverseSorted)
+        return self.reverseSorted
+    
+
+
+
+sort = selectionSort([4,3,5,1,7,8])
+sort.returnSorted(True)

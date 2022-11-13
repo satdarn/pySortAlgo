@@ -10,4 +10,5 @@ Each Algo has 3 return functions:
 
 Current Algos implemeted: 
     Insertion
+    Selection
 
